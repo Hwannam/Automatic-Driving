@@ -16,43 +16,75 @@ void setup() {
 
   pinMode(13, OUTPUT);       // Motor D 방향설정2
 
+  Serial.begin(9600);
+
 }
 
 
 void loop() {
 
   /*모터A설정*/
-
   digitalWrite(2, HIGH);     // Motor A 방향설정1
 
   digitalWrite(4, LOW);      // Motor A 방향설정2
 
-  analogWrite(3, 100);       // Motor A 속도조절 (0~255)
-
   /*모터B설정*/
-
   digitalWrite(6, LOW);      // Motor B 방향설정1
 
   digitalWrite(7, HIGH);     // Motor B 방향설정2
 
-  analogWrite(5, 100);        // Motor B 속도조절 (0~255)
-
   /*모터C설정*/
 
-  digitalWrite(8, LOW);      // Motor B 방향설정1
+  digitalWrite(8, LOW);      // Motor C 방향설정1
 
-  digitalWrite(9, HIGH);     // Motor B 방향설정2
-
-  analogWrite(10, 100);        // Motor B 속도조절 (0~255)
+  digitalWrite(9, HIGH);     // Motor C 방향설정2
 
   /*모터D설정*/
 
-  digitalWrite(12, LOW);      // Motor B 방향설정1
+  digitalWrite(12, LOW);      // Motor D 방향설정1
 
-  digitalWrite(13, HIGH);     // Motor B 방향설정2
+  digitalWrite(13, HIGH);     // Motor D 방향설정2
 
-  analogWrite(11, 100);        // Motor B 속도조절 (0~255)
+  char s = Serial.read();
 
-  delay(3000);                   // 3초 유지
+  if(s == '1') // 100km
+  {
+    analogWrite(3, 100);
+    analogWrite(5, 100);
+    analogWrite(10, 100);
+    analogWrite(11, 100); 
+  }
+
+  if(s == '7') // 70km
+  {
+    analogWrite(3, 70);
+    analogWrite(5, 70);
+    analogWrite(10, 70);
+    analogWrite(11, 70); 
+  }
+
+  if(s == 's' || s == 'e' || s == 'o') // Stop or Red Light or Obstacle
+  {
+    analogWrite(3, 0);
+    analogWrite(5, 0);
+    analogWrite(10, 0);
+    analogWrite(11, 0); 
+  }
+
+  if(s == 'r') // Turn Right 
+  {
+    analogWrite(3, 70);
+    analogWrite(5, 100);
+    analogWrite(10, 100);
+    analogWrite(11, 70); 
+  }
+
+   if(s == 'l') // Turn Left 
+  {
+    analogWrite(3, 100);
+    analogWrite(5, 70);
+    analogWrite(10, 70);
+    analogWrite(11, 100); 
+  }
 
 }
