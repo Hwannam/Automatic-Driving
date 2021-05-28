@@ -17,7 +17,6 @@ from keras.preprocessing.image import ImageDataGenerator
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 
 ################# Parameters #####################
-
 path = "myData"  # folder with all the class folders
 labelFile = 'labels.csv'  # file with all names of classes
 batch_size_val = 50  # how many to process together
