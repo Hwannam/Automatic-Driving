@@ -55,12 +55,12 @@ void loop() {
     analogWrite(11, 100); 
   }
 
-  if(s == '7') // 70km
+  if(s == '6') // 60km
   {
-    analogWrite(3, 70);
-    analogWrite(5, 70);
-    analogWrite(10, 70);
-    analogWrite(11, 70); 
+    analogWrite(3, 60);
+    analogWrite(5, 60);
+    analogWrite(10, 60);
+    analogWrite(11, 60); 
   }
 
   if(s == 's' || s == 'e' || s == 'o') // Stop or Red Light or Obstacle
