@@ -5,7 +5,7 @@
 
 OpenCV(Python)
 
-Raspberry PI Model B+, Arduino UNO
+Raspberry PI 3 Model B+, Arduino UNO
 
 Raspberry PI Camera V2, WebCamera
 
