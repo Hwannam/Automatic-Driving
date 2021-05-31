@@ -13,7 +13,7 @@ font = cv2.FONT_HERSHEY_SIMPLEX
 # SETUP THE VIDEO CAMERA
 cap = cv2.VideoCapture(0)
 
-# IMPORT THE TRANNIED MODEL
+# 훈련시킨 모델을 불러온다
 pickle_in = open("model_trained.p", "rb")  ## rb = READ BYTEh
 model = pickle.load(pickle_in)
 
