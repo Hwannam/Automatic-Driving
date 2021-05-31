@@ -1,10 +1,7 @@
 # Automatic-Driving
 2021-1 Graduation Thesis
 
-
-
 OpenCV(Python)
-
 Raspberry PI Model B+, Arduino UNO
 
 Raspberry PI Camera V2, WebCamera
